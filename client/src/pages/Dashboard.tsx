@@ -1,6 +1,8 @@
+
 import React, { useState, useEffect } from 'react'
 import { Link as RouterLink, useNavigate } from 'react-router-dom'
 import {
+
   Box,
   Container,
   VStack,
@@ -705,7 +707,33 @@ const Dashboard: React.FC = () => {
         {/* Popup Modal System */}
         <PopupModal />
       </VStack>
+      <IconButton
+  as={RouterLink}
+  to="/add-product"
+  aria-label="Add product"
+  icon={<AddIcon />}
+  position="fixed"
+  bottom={12}
+  right={6}
+  h={14}
+  w={14}
+  display="flex"
+  alignItems="center"
+  justifyContent="center"
+  bgGradient="linear(to-br, brand.500, teal.400)"
+  color="white"
+  borderRadius="full"
+  borderWidth={2}
+  borderColor="white"
+  zIndex={200}
+  boxShadow="0 8px 30px rgba(16, 185, 129, 0.18), 0 4px 10px rgba(0,0,0,0.08)"
+  _hover={{ transform: 'translateY(-4px) scale(1.03)', boxShadow: '0 12px 40px rgba(16,185,129,0.22), 0 6px 16px rgba(0,0,0,0.12)' }}
+  _active={{ transform: 'translateY(-1px) scale(0.99)', boxShadow: '0 6px 20px rgba(16,185,129,0.16)' }}
+  _focus={{ boxShadow: '0 0 0 6px rgba(16,185,129,0.12)' }}
+  title="Add product"
+/>
     </Container>
+    
   )
 }
 

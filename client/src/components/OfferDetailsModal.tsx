@@ -6,6 +6,7 @@ import { useProducts } from '../contexts/ProductContext'
 import { getFirstImage } from '../utils/imageUtils'
 import { useAuth } from '../contexts/AuthContext'
 import { api } from '../services/api'
+import ProductStatusDropdown from './ProductStatusDropdown'
 
 interface OfferDetailsModalProps {
   trade: Trade | null
@@ -236,12 +237,14 @@ const OfferDetailsModal: React.FC<OfferDetailsModalProps> = ({ trade, isOpen, on
             <Text mt={2} fontWeight="bold" fontSize={priceFontSize}>{formatPHP(p.price as number)}</Text>
           )}
 
-          {/* Remove seller info in compact (offered) mode */}
-          {!compact && <Text mt={1} fontSize="sm" color="gray.600">Seller: {p.seller_name || `#${p.seller_id}`}</Text>}
-
+            {/* Remove seller info in compact (offered) mode */}
+            {!compact && <Text mt={1} fontSize="sm" color="gray.600">Seller: {p.seller_name || `#${p.seller_id}`}</Text>}
+            
+          
           <Button as={'a'} href={`/products/${p.id}`} variant="link" colorScheme="brand" mt={2} size={compact ? 'sm' : 'md'}>View listing</Button>
         </Box>
       </Box>
+      
     )
   }
 
